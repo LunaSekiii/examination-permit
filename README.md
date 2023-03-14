@@ -8,7 +8,7 @@
 
 这是个小项目，用于给学院基地考核的密码生成系统提供动态界面。
 
-[动态考试许可证](https://lunasekiii.github.io/examination-permit/build/)
+[动态考试许可证预览地址](https://lunasekiii.github.io/examination-permit/build/)
 
 采用了动态海报风格，灵感来源于 [B 站一位大佬的动态海报](https://github.com/d3adrabbit/to-kill-a-rabbit)
 
