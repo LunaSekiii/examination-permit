@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# 动态考试许可证
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是个小项目，用于给学院基地考核的密码生成系统提供动态界面。
 
-## Available Scripts
+采用了动态海报风格，灵感来源于 [B 站一位大佬的动态海报](https://github.com/d3adrabbit/to-kill-a-rabbit)
 
-In the project directory, you can run:
+时间关系暂时未设计成动态网页，而是引入 **react-app-rewired** 插件后进行 webpack 覆写，并打包成单独的 html 文件，再利用 python 进行动态生成
+
+## 运行方式
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+正常运行
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+正常测试
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+正常生成（生成多个文件）
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn rstart`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+采用覆写配置运行
 
-### `yarn eject`
+### `yarn rtest`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+采用覆写配置测试
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `yarn rbuild`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+采用覆写配置生成单独的 html 文件
