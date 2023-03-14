@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  --pc: #434b9e;
+  --sc: #8085bc;
+  --tc: #fff;
+  --bw: 0.5rem;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sc);
+}
+.box {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.half-box {
+  width: max(45vw, 45vh);
+  height: max(45vw, 45vh);
+  border: var(--pc) var(--bw) solid;
+  display: grid;
+  overflow: hidden;
+  border-right: none;
+  border-bottom: none;
+}
+.first-box {
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 50% 13% 38%;
+  grid-template-areas: " tb tb tb tb" "ws ws ws ws" "info info info info";
+}
+.first-box * {
+  border: var(--pc) var(--bw) solid;
+  margin-left: calc(-1 * var(--bw));
+  margin-top: calc(-1 * var(--bw));
+}
+.title-box {
+  grid-area: tb;
+  border: none;
+  margin: 0;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  border-right: var(--pc) var(--bw) solid;
+  grid-template-areas: "cn ." "on on";
+}
+.title-box .class-name {
+  padding-left: 1rem;
+  line-height: calc(max(45vw, 45vh) * 0.24);
+  grid-area: cn;
+  color: var(--tc);
+  text-align: left;
+  font-size: calc(max(45vw, 45vh) * 0.2);
+  font-weight: 700;
+  background-color: var(--pc);
+  border-right: none;
+  border-bottom: none;
+}
+.title-box .organization-name {
+  padding-left: 1rem;
+  line-height: calc(max(45vw, 45vh) * 0.24);
+  grid-area: on;
+  color: var(--pc);
+  font-size: calc(max(45vw, 45vh) * 0.16);
+  font-weight: 700;
+  border-right: none;
+  border-top: none;
+}
+.title-box .organization-icon {
+  border: none;
+}
+.title-box .organization-icon img {
+  position: absolute;
+  top: calc(max(45vw, 45vh) * -0.4);
+  right: calc(max(45vw, 45vh) * -0.4);
+  border: none;
+  max-width: calc(max(45vw, 45vh) * 0.8);
+}
+.warning-strip {
+  grid-area: ws;
+  background-color: var(--pc);
+  line-height: calc(max(45vw, 45vh) * 0.12);
+  text-align: center;
+  color: var(--tc);
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  font-weight: 900;
+  overflow: hidden;
+}
+.warning-strip .warning-text {
+  white-space: pre;
+  display: inline-block;
+}
+.information {
+  grid-area: info;
+  border-right: none;
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "tc  tl gn" "wc  wc wl";
+  color: var(--pc);
+}
+.information .time-content {
+  padding-left: 1rem;
+  color: var(--tc);
+  background-color: var(--pc);
+  font-weight: 800;
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  grid-area: tc;
+  line-height: calc(max(45vw, 45vh) * 0.1);
+  white-space: pre;
+}
+.information .time-label {
+  font-weight: 800;
+  text-align: center;
+  font-size: calc(max(45vw, 45vh) * 0.05);
+  grid-area: tl;
+  line-height: calc(max(45vw, 45vh) * 0.1);
+  white-space: pre;
+}
+.information .website-content {
+  padding-left: 1rem;
+  color: var(--tc);
+  background-color: var(--pc);
+  font-weight: 800;
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  grid-area: wc;
+  line-height: calc(max(45vw, 45vh) * 0.2);
+}
+.information .website-label {
+  font-weight: 800;
+  text-align: center;
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  grid-area: wl;
+  line-height: calc(max(45vw, 45vh) * 0.11);
+}
+.information .group-name {
+  grid-area: gn;
+  color: var(--sc);
+  background-color: var(--pc);
+  text-align: center;
+  line-height: calc(max(45vw, 45vh) * 0.11);
+  font-size: calc(max(45vw, 45vh) * 0.04);
+  font-weight: 600;
+}
+.second-box {
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+  grid-template-areas: " pg rules rules rules" " pg rules rules rules" " account account account account" " account account account account";
+}
+.second-box * {
+  border: var(--pc) var(--bw) solid;
+  margin-left: calc(-1 * var(--bw));
+  margin-top: calc(-1 * var(--bw));
+}
+.progress {
+  counter-reset: step-l 0;
+  grid-area: pg;
+  background-color: var(--pc);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: end;
+}
+.progress .progress-step1 {
+  margin-top: calc(max(45vw, 45vh) * 0.01);
+  width: 16%;
+  height: calc(max(45vw, 45vh) * 0.05);
+  border: var(--sc) calc(var(--bw) * 0.5) solid;
+  background-color: var(--sc);
+}
+.progress .progress-step2 {
+  margin-top: calc(max(45vw, 45vh) * 0.01);
+  width: 32%;
+  height: calc(max(45vw, 45vh) * 0.05);
+  border: var(--sc) calc(var(--bw) * 0.5) solid;
+  background-color: var(--sc);
+}
+.progress .progress-step3 {
+  margin-top: calc(max(45vw, 45vh) * 0.01);
+  width: 48%;
+  height: calc(max(45vw, 45vh) * 0.05);
+  border: var(--sc) calc(var(--bw) * 0.5) solid;
+  background-color: var(--sc);
+}
+.progress .progress-step4 {
+  margin-top: calc(max(45vw, 45vh) * 0.01);
+  width: 64%;
+  height: calc(max(45vw, 45vh) * 0.05);
+  border: var(--sc) calc(var(--bw) * 0.5) solid;
+  background-color: var(--sc);
+}
+.progress .progress-step5 {
+  margin-top: calc(max(45vw, 45vh) * 0.01);
+  width: 80%;
+  height: calc(max(45vw, 45vh) * 0.05);
+  border: var(--sc) calc(var(--bw) * 0.5) solid;
+  background-color: var(--sc);
+}
+.rules {
+  grid-area: rules;
+  display: grid;
+  grid-template-columns: 33% 66%;
+  grid-template-rows: repeat(2, 50%);
+  grid-template-areas: "l1 l1" "title l2";
+}
+.rules .title {
+  grid-area: title;
+  color: var(--tc);
+  background-color: var(--pc);
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  text-align: center;
+  line-height: calc(max(45vw, 45vh) * 0.11);
+}
+.rules .l1 {
+  grid-area: l1;
+  width: 100%;
+  color: var(--pc);
+  font-size: calc(max(45vw, 45vh) * 0.054);
+  font-weight: 600;
+  text-align: right;
+  padding-right: 0.1rem;
+}
+.rules .l2 {
+  grid-area: l2;
+  width: 100%;
+  color: var(--pc);
+  font-size: calc(max(45vw, 45vh) * 0.054);
+  font-weight: 600;
+  text-align: right;
+  padding-right: 0.1rem;
+}
+.account {
+  grid-area: account;
+  font-size: calc(max(45vw, 45vh) * 0.07);
+  font-weight: 900;
+  text-align: center;
+  line-height: calc(max(45vw, 45vh) * 0.22);
+  color: var(--tc);
+  background-color: var(--pc);
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+  grid-template-areas: "nl nc nc nc" "pi pl pc pc";
+}
+.account * {
+  border: var(--pc) var(--bw) solid;
+  margin-left: calc(-1 * var(--bw));
+  margin-top: calc(-1 * var(--bw));
+}
+.account .username-label {
+  grid-area: nl;
+  white-space: nowarp;
+  font-size: calc(max(45vw, 45vh) * 0.06);
+  color: var(--pc);
+  background-color: var(--sc);
+}
+.account .username-content {
+  grid-area: nc;
+}
+.account .password-icon {
+  grid-area: pi;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.account .password-icon ::before {
+  content: "";
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  border: var(--sc) var(--bw) solid;
+}
+.account .password-icon img {
+  margin: 0;
+  max-width: calc(max(45vw, 45vh) * 0.15);
+}
+.account .password-label {
+  grid-area: pl;
+  color: var(--pc);
+  background-color: var(--sc);
+}
+.account .password-content {
+  grid-area: pc;
+}
